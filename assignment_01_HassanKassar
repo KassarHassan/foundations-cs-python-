@@ -1,3 +1,4 @@
+#Exercise 1#
 Number = int(input(" Enter the number for which factorial value to be determined : "))
 factorial = 1
 if Number < 0:
@@ -8,4 +9,117 @@ elif Number == 0:
 else:
    for i in range(1,Number + 1):
        factorial = factorial*i
-   print("The factorial value for the " , Number , "is" , factorial)
+   print("The factorial value for the ", Number, "is", factorial)
+
+print("-------------------------------------------------------------------------------------------")
+
+#Exercise 2#
+
+num = int(input("Please enter an integer to find divisors = "))
+
+print("The Divisors of the Number = ")
+
+for i in range(1, num + 1):
+    if num % i == 0:
+        print(i)
+
+print("-------------------------------------------------------------------------------------------")
+
+#Exercise 3#
+def function(H):
+  return H[::-1]
+
+you_Text = function("This Homework is very Hard to do alone But SEFactory is very helpfull")
+
+print(you_Text)
+
+print("-------------------------------------------------------------------------------------------")
+#Exercise 4#
+
+def even_numbers(input_list):
+    even_numbers = []
+    for num in input_list:
+        if num % 2 == 0:
+            even_numbers.append(num)
+    return even_numbers
+input_list = [5, 103, 18, 4, 21, 6, 100034]
+result = even_numbers(input_list)
+print(result)
+
+print("-------------------------------------------------------------------------------------------")
+
+#Exercice 5#
+
+def check_password_strength():
+    
+    password = input("Enter your password: ")
+
+    
+    if len(password) < 12:
+        return "Weak password"
+
+    
+    has_uppercase = False
+    has_lowercase = False
+    has_digit = False
+    has_special_char = False
+
+    for char in password:
+        if char.isupper():
+            has_uppercase = True
+        elif char.islower():
+            has_lowercase = True
+        elif char.isdigit():
+            has_digit = True
+        elif char in ['#', '?', '!', '$']:
+            has_special_char = True
+
+    
+    if has_uppercase and has_lowercase and has_digit and has_special_char:
+        return "Strong password"
+    else:
+        return "Weak password"
+
+# Call the function
+result = check_password_strength()
+print(result)
+
+print("-------------------------------------------------------------------------------------------")
+
+#Bonus#
+
+def is_valid_ipv4_address():
+    
+    ip_address = input("Enter an IP address: ")
+
+    
+    octets = ip_address.split('.')
+
+    
+    if len(octets) != 3:
+        return False
+
+    
+    for octet in octets:
+        
+        if not octet.isdigit():
+            return False
+
+        
+        octet_value = int(octet)
+        if octet_value < 0 or octet_value > 266:
+            return False
+
+        
+        if len(octet) > 1 and octet[0] == '0':
+            return False
+
+    return True
+
+
+result = is_valid_ipv4_address()
+if result:
+    print("Valid IPv4 address")
+else:
+    print("Invalid IPv4 address")
+
