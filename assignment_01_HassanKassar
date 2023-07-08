@@ -80,7 +80,7 @@ def check_password_strength():
     else:
         return "Weak password"
 
-# Call the function
+
 result = check_password_strength()
 print(result)
 
