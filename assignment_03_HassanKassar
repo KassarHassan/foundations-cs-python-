@@ -1,0 +1,77 @@
+import json
+
+
+# def sum_tuples(tup1, tup2):
+#     if len(tup1) != len(tup2):
+#         raise ValueError("Input tuples must be of the same length.")
+    
+#     return tuple(x + y for x, y in zip(tup1, tup2))
+
+
+# def write_to_json(dictionary, filename):
+#     with open(filename, 'w') as file:
+#         json.dump(dictionary, file, indent=4)
+
+
+# def read_json(filename):
+#     with open(filename, 'r') as file:
+#         data = json.load(file)
+#         return data
+
+
+# def display_menu():
+#     print("Menu:")
+#     print("1. Sum Tuples")
+#     print("2. Export JSON")
+#     print("3. Import JSON")
+#     print("4. Exit")
+
+
+# def main():
+#     while True:
+#         display_menu()
+#         choice = input("Enter a choice: ")
+
+#         if choice == '1':
+#             try:
+               
+#                 tup1 = tuple(map(int, input("Enter the first tuple elements separated by spaces: ").split()))
+#                 tup2 = tuple(map(int, input("Enter the second tuple elements separated by spaces: ").split()))
+               
+#                 result = sum_tuples(tup1, tup2)
+#                 print("Result:", result)
+#             except ValueError as e:
+#                 print("Error:", e)
+
+#         elif choice == '2':
+#             try:
+                
+#                 dictionary = eval(input("Enter a valid Python dictionary: "))
+#                 filename = input("Enter the filename to save the JSON data: ")
+                
+#                 write_to_json(dictionary, filename)
+#                 print("Data written to", filename)
+#             except Exception as e:
+#                 print("Error:", e)
+
+#         elif choice == '3':
+#             try:
+                
+#                 filename = input("Enter filename to read JSON data from: ")
+                
+#                 data = read_json(filename)
+#                 print("Data from JSON file:", data)
+#             except FileNotFoundError:
+#                 print("File not found:", filename)
+#             except json.JSONDecodeError as e:
+#                 print("Error decoding JSON:", e)
+
+#         elif choice == '4':
+#             print("Exiting program.")
+#             break
+
+#         else:
+#             print("Invalid choice. Please select a valid option.")
+
+# if __name__ == "__main__":
+#     main() 
